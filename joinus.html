@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--Form by Thrinayani-->
+<html>
+<head>
+<link rel="stylesheet" href="joinus.css">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<title>Join Zoophilist</title>
+</head>
+<body>
+<div class="formbox">
+<div class="title">Join <span class="orgname"><span style="color:crimson;">Zoo</span>philist</span></div>
+<div class="content">
+<form action="volunteer.html">
+<div class="user-details">
+<div class="input-box">
+<span class="details">Full Name</span>
+<input type="text" placeholder="Name" required>
+</div>
+<div class="input-box">
+<span class="details">Username</span>
+<input type="text" placeholder="Username" required>
+</div>
+<div class="input-box">
+<span class="details">Email</span>
+<input type="email" placeholder="Email" required></div>
+<div class="input-box">
+<span class="details">Phone Number</span>
+<input type="text" pattern="\d*" title="Numbers only" minlength="10" maxlength="10" placeholder="Phone Number" required>
+</div>
+<div class="input-box">
+<span class="details">Password</span>
+<input type="password" id="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter password" required>
+</div>
+<div class="input-box">
+<span class="details">Confirm Password</span>
+<input type="password" id="confirm_password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm password" required>
+</div>
+</div>
+<div class="button">
+<input type="submit" value="Register"/>
+</div>
+</form>
+</div>
+</div>
+<script>
+
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "text") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+</script>
+</body>
+</html>
